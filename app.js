@@ -23,4 +23,4 @@ try {
 
 app.listen(port, () => // Start the server and listen on the defined port
     console.log(`Listening to port at ${port}`) // Log a message to the console indicating the server is running
-); 
+) ;
