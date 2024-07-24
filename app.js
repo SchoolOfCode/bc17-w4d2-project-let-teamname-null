@@ -1,15 +1,15 @@
-import express from 'express';
-import helmet from 'helmet';
+import express from 'express'; // Import the express module
+import helmet from 'helmet'; // Import the helmet module for security
 
-const app = express();
-const port = 8080;
+const app = express(); // Create an instance of an Express application
+const port = 8080; // Define the port number the server will listen on
 
-app.use(helmet());
+app.use(helmet()); // Use helmet middleware to enhance security
 
-app.get (`/`, (req, res) => {
-    res.status(200).send('Hello World!').getHeaders
-})
+app.get('/', (req, res) => { // Define a route handler for the root URL ('/')
+    res.status(200).send('Hello World!'); // Send a 'Hello World!' response with a 200 status code
+});
 
-app.listen(port, () => 
-    console.log(`Listening to port at ${port}`)
-)
+app.listen(port, () => // Start the server and listen on the defined port
+    console.log(`Listening to port at ${port}`) // Log a message to the console indicating the server is running
+);
