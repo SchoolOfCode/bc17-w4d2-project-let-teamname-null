@@ -6,15 +6,16 @@ const port = 8080; // Define the port number the server will listen on
 
 app.use(helmet()); // Use helmet middleware to enhance security 
 
+async function getActivities () {
+  return  "data"
+}
+
 app.get('/activities', async (req, res) => { // Define a route handler for the root URL ('/')
     try { 
         const activities = await getActivities();
         res.status(200).json( {
-            data: [
-                { }, // activity object
-                { }, // activity object
-                { } // activity object
-            ]
+         "success": true, 
+         "payload": data
         });
    
     } catch (error) {
