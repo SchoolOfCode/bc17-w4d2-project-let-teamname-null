@@ -78,3 +78,18 @@ app.get('/activities', (req, res) => { // Define a route handler for the root UR
 app.listen(port, () => // Start the server and listen on the defined port
     console.log(`Listening to port at ${port}`) // Log a message to the console indicating the server is running
 ) ;
+
+// epic 2 user 2 - create a post req.
+
+app.post(`/activites`, (req, res) => {
+
+const newActivity = rep.body.newActivity;
+
+if (!newActivity) {
+    res.status(400).json({
+        "error": true,
+        "data": null
+    })  
+}
+
+});
