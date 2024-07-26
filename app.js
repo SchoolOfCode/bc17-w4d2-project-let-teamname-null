@@ -19,8 +19,7 @@ const getRandomTimestamp = () => {
     return timestamp.toISOString();
 };
 
-const activities = {
-    "data": [
+const activities = [
         {
             "id": "9589c497-674c-442d-a569-ef30c3cb9992",
             "activity_submitted": "1721835908783", // Random timestamp
@@ -39,8 +38,7 @@ const activities = {
             "activity_type": "Swimming",
             "activity_duration": "15"
         }
-    ]
-};
+    ];
 
 console.log(activities);
 
@@ -66,7 +64,7 @@ app.get('/activities', (req, res) => { // Define a route handler for the root UR
 // epic 2 user 2 - create a post req.
 
 app.post(`/activities`, async (req, res) => {
-    const newActivity = req.body.newActivity;
+    const newActivity = req.body;
     if (!newActivity) {
         res.status(400).json({
             "error": true,
