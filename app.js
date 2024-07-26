@@ -63,6 +63,8 @@ app.get('/activities', (req, res) => { // Define a route handler for the root UR
     }
 }); 
 
+// epic 2 user 2 - create a post req.
+
 app.post(`/activities`, async (req, res) => {
     const newActivity = req.body.newActivity;
     if (!newActivity) {
@@ -91,33 +93,3 @@ app.post(`/activities`, async (req, res) => {
 app.listen(port, () => // Start the server and listen on the defined port
     console.log(`Listening to port at ${port}`) // Log a message to the console indicating the server is running
 ) ;
-
-// epic 2 user 2 - create a post req.
-
-app.post(`/activites`, (req, res) => {
-
-    const newActivity = rep.body.newActivity;
-
-    if (!newActivity) {
-        res.status(400).json({
-            "error": true,
-            "data": null
-        })  
-    }
-
-    const activity = {
-        ...newActivity,
-        id: uuidv4(),
-        activity_submitted: Date.now(),
-    }
-
-    activities.push(activity);
-    console.log(activity);
-    console.log(activities);
-
-    res.status(201).json({
-        "error": false,
-        "data": activity
-    })
-    
-});
