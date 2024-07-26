@@ -5,21 +5,10 @@ import { v4 as uuidv4 } from 'uuid';
 const app = express(); // Create an instance of an Express application
 const port = 8080; // Define the port number the server will listen on
 
+app.use(express.json());
 app.use(helmet()); // Use helmet middleware to enhance security
 
-app.get('/', (req, res) => { // Define a route handler for the root URL ('/')
-    
-try { 
 
-    res.status(200).send('Hello World!'); // Send a 'Hello World!' response with a 200 status code
-} catch (error) {
-    console.log(error);
-    res.status(500).json({
-        "success": false, 
-        "payload": null
-    }); 
-}
-});
 
 console.log(`UUID = ${uuidv4()}`)
 
@@ -63,7 +52,7 @@ app.get('/activities', (req, res) => { // Define a route handler for the root UR
     try { 
         res.status(200).json({
             "error": null, 
-            "data": (activities)
+            "data": activities
         });
     } catch (error) {
         console.log(error);
@@ -73,6 +62,30 @@ app.get('/activities', (req, res) => { // Define a route handler for the root UR
         }); 
     }
 }); 
+
+app.post(`/activities`, async (req, res) => {
+    const newActivity = req.body.newActivity;
+    if (!newActivity) {
+        res.status(400).json({
+            "error": true,
+            "data": null
+        })
+        console.log(newActivity);
+        return;
+    }
+    const activity = await {
+        ...newActivity,
+        id: uuidv4(),
+        activity_submitted: Date.now(),
+    }
+    activities.push(activity);
+    console.log(activity);
+    console.log(activities);
+    res.status(201).json({
+        "error": false,
+        "data": activity
+    })
+});
 
 
 app.listen(port, () => // Start the server and listen on the defined port

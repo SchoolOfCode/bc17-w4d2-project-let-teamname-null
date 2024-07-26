@@ -1,12 +1,16 @@
 import express from 'express'; // Import the express module
 import helmet from 'helmet'; // Import the helmet module for security
+import { v4 as uuidv4 } from 'uuid';
+import { readFile, writeFile } from "node:fs/promises"
 
-const app = express(); // Create an instance of an Express application
-const port = 8080; // Define the port number the server will listen on
+const activityList = "./activities.json"
 
-app.use(helmet()); // Use helmet middleware to enhance security 
-
-app.listen(port, () => // Start the server and listen on the defined port
-    console.log(`Listening to port at ${port}`) // Log a message to the console indicating the server is running
-) ; 
-
+export async function getActivities() {
+    try {
+        const data = await readFile(activityList, "utf8");
+        console.log(data);
+    } catch (error) {
+        console.log("Error reading file", error);
+        throw error;
+    }
+}
