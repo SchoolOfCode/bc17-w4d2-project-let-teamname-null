@@ -1,25 +1,24 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "activity_submitted": "1",
+      "activity_type": "run",
+      "activity_duration": "30"
+    },
 
-{
-	"data": [
-{
-	"id": "1",
-	"activity_submitted": "1", 
-	"activity_type": "run", 
-	"activity_duration": "30"
-},
+    {
+      "id": "2",
+      "activity_submitted": "2",
+      "activity_type": "cycling",
+      "activity_duration": "60"
+    },
 
-{
-	"id": "2",
-	"activity_submitted": "2", 
-	"activity_type": "cycling", 
-	"activity_duration": "60"
-},
-
-{
-	"id": "3",
-	"activity_submitted": "3", 
-	"activity_type": "swimming", 
-	"activity_duration": "15"
+    {
+      "id": "3",
+      "activity_submitted": "3",
+      "activity_type": "swimming",
+      "activity_duration": "15"
+    }
+  ]
 }
-	
-]}

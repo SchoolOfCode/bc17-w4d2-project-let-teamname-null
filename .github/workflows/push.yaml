@@ -1,6 +1,6 @@
 name: Test Push Request
 
-on: 
+on:
   push:
     branches:
       - AidanTest
