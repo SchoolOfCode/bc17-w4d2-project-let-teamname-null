@@ -12,12 +12,12 @@ app.use(helmet()); // Use helmet middleware to enhance security
 
 console.log(`UUID = ${uuidv4()}`)
 
-const getRandomTimestamp = () => {
-    const start = new Date(2020, 0, 1).getTime(); // Start date: January 1, 2020
-    const end = new Date().getTime(); // End date: current date
-    const timestamp = new Date(start + Math.random() * (end - start));
-    return timestamp.toISOString();
-};
+// const getRandomTimestamp = () => {
+//     const start = new Date(2020, 0, 1).getTime(); // Start date: January 1, 2020
+//     const end = new Date().getTime(); // End date: current date
+//     const timestamp = new Date(start + Math.random() * (end - start));
+//     return timestamp.toISOString();
+// };
 
 const activities = [
         {
@@ -42,9 +42,9 @@ const activities = [
 
 console.log(activities);
 
-async function getActivities () {
-    return  "data"
-}
+// async function getActivities () {
+//     return  "data"
+// }
 
 app.get('/activities', (req, res) => { // Define a route handler for the root URL ('/')
     try { 

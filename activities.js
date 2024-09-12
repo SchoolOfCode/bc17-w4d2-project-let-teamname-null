@@ -1,7 +1,4 @@
-import express from 'express'; // Import the express module
-import helmet from 'helmet'; // Import the helmet module for security
-import { v4 as uuidv4 } from 'uuid';
-import { readFile, writeFile } from "node:fs/promises"
+import { readFile } from "node:fs/promises"
 
 const activityList = "./activities.json"
 
