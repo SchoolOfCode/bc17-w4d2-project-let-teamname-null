@@ -74,9 +74,9 @@ app.post(`/activities`, async (req, res) => {
         return;
     }
     const activity = await {
-        ...newActivity,
         id: uuidv4(),
         activity_submitted: Date.now(),
+        ...newActivity,
     }
     activities.push(activity);
     console.log(activity);

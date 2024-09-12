@@ -4,7 +4,11 @@
   "description": "Feel free to delete this and start from scratch.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky",
+    "lint": "eslint",
+    "check": "prettier . --check",
+    "format": "prettier . --write"
   },
   "type": "module",
   "keywords": [],
@@ -13,6 +17,15 @@
   "dependencies": {
     "express": "^4.19.2",
     "helmet": "^7.1.0",
+    "husky": "^9.1.6",
     "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@next/eslint-plugin-next": "^14.2.10",
+    "eslint": "^9.10.0",
+    "eslint-plugin-react": "^7.36.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3"
   }
 }

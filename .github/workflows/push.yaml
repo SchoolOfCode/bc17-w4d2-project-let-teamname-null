@@ -1,0 +1,39 @@
+name: Build and Test Pull Request
+
+on: 
+  push:
+    branches:
+      - AidanTest
+
+jobs:
+  lint-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run eslint
+        run: npm run lint
+
+  check-code:
+    runs-on: ubuntu-latest
+    needs: lint-code
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run eslint
+        run: npm run check
+
+  format-code:
+    runs-on: ubuntu-latest
+    needs: [lint-code, check-code]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run eslint
+        run: npm run format
